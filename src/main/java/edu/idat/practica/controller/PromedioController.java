@@ -15,7 +15,7 @@ public class PromedioController {
     model.addAttribute("promediomodel", new PromedioModel());
     return "promedio";
     }
-@PostMapping ("/calcularPromedio")
+@PostMapping ("/calcularpromedio")
 public String calcularPromedio (@ModelAttribute ("promediomodel")PromedioModel promedio,
                                 Model model) {
     Double n1 = promedio.getN1();

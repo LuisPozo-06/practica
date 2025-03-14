@@ -16,29 +16,29 @@
     <div class="card-body">
         <!-- th:action = (se usa @) resuelve una ruta definida en el controlador
              th:object = (se usa $)mapea un objeto enviado desde el contralador  -->
-        <form th:action="@{/calcularimc}" method="post"
-              th:object="${imcmodel}">
+        <form th:action="@{/calcularpromedio}" method="post"
+              th:object="${promediomodel}">
             <div class="mb-3">
-                <label for="txttalla" class="form-label">NOTA1:</label>
-                <input type="number" th:field="*{talla}" class="form-control" id="txttalla" placeholder="name@example.com">
+                <label for="txtn1" class="form-label">NOTA1:</label>
+                <input type="number" th:field="*{n1}" class="form-control" id="txtn1" placeholder="name@example.com">
             </div>
             <div class="mb-3">
-                <label for="txttalla" class="form-label">NOTA2:</label>
-                <input type="number" th:field="*{talla}" class="form-control" id="txttalla" placeholder="name@example.com">
+                <label for="txtn2" class="form-label">NOTA2:</label>
+                <input type="number" th:field="*{n2}" class="form-control" id="txtn2" placeholder="name@example.com">
             </div>
             <div class="mb-3">
-                <label for="txttalla" class="form-label">NOTA3:</label>
-                <input type="number" th:field="*{talla}" class="form-control" id="txttalla" placeholder="name@example.com">
+                <label for="txtn3" class="form-label">NOTA3:</label>
+                <input type="number" th:field="*{n3}" class="form-control" id="txtn3" placeholder="name@example.com">
             </div>
             <div class="mb-3">
-                <label for="txtpeso" class="form-label">NOTA FINAL:</label>
-                <input type="number" th:field="*{peso}" class="form-control" id="txtpeso" placeholder="name@example.com">
+                <label for="txtef" class="form-label">NOTA FINAL:</label>
+                <input type="number" th:field="*{ef}" class="form-control" id="txtef" placeholder="name@example.com">
             </div>
             <button type="submit"
                     class="btn btn-primary">CALCULAR</button>
         </form>
-        <div th:if="${visualizaralerta}"
-             class="alert" th:classappend="${estilodiagnostico}"
+        <div
+             class="alert"
              role="alert">
             <span th:text="${resultado} ?: ''"></span>
         </div>
