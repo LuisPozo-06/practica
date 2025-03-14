@@ -23,15 +23,17 @@ public String calcularPromedio (@ModelAttribute ("promediomodel")PromedioModel p
     Double n3 = promedio.getN3();
     Double ef = promedio.getEf();
     Double resultado = (n1 * 0.04) + (n2 * 0.12) + (n3 * 0.24) + (ef * 0.60);
-    String resultadotxt = "";
+    String resultadotxt;
+    String color;
 
-    if (resultado <= 13){
+    if (resultado <= 13) {
         resultadotxt = "Desaprobado";
-
-    }
-    else {
+        color = "alert-danger"; // Rojo
+    } else {
         resultadotxt = "Aprobado";
+        color = "alert-primary"; // Azul
     }
+
     model.addAttribute("resultado", "El promedio es: " + resultado + ",te encuentras"+resultadotxt);
     return "promedio";
     }
